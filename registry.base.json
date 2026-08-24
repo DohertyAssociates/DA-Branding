@@ -1,0 +1,194 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "doherty-associates",
+  "homepage": "https://doherty.co.uk",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "Doherty Associates Theme",
+      "description": "Brand colour variables from the DA Brand Identity Guidelines: Magenta #AE1065, Yellow #FFCC00, Plum #670639, Work Sans.",
+      "dependencies": ["@fontsource-variable/work-sans@^5.2.5"],
+      "docs": "Import the brand font once in your app entry file: import \"@fontsource-variable/work-sans\"",
+      "cssVars": {
+        "theme": {
+          "font-sans": "\"Work Sans Variable\", \"Work Sans\", Arial, Helvetica, sans-serif",
+          "color-brand-50": "#fdf2f8",
+          "color-brand-100": "#fce7f0",
+          "color-brand-200": "#fbcfe1",
+          "color-brand-300": "#f8a8c9",
+          "color-brand-400": "#f272a6",
+          "color-brand-500": "#d63384",
+          "color-brand-600": "#ae1065",
+          "color-brand-700": "#8f0d53",
+          "color-brand-800": "#760c46",
+          "color-brand-900": "#630d3c",
+          "color-brand-950": "#3d0623",
+          "color-brand": "#ae1065",
+          "color-da-yellow-50": "#fffbe6",
+          "color-da-yellow-100": "#fff5bf",
+          "color-da-yellow-200": "#ffea80",
+          "color-da-yellow-300": "#ffdf40",
+          "color-da-yellow-400": "#ffd51a",
+          "color-da-yellow-500": "#ffcc00",
+          "color-da-yellow-600": "#d9ad00",
+          "color-da-yellow-700": "#b38f00",
+          "color-da-yellow-800": "#8c7000",
+          "color-da-yellow-900": "#665200",
+          "color-da-yellow": "#ffcc00",
+          "color-da-plum-50": "#f9edf3",
+          "color-da-plum-100": "#f2d8e4",
+          "color-da-plum-200": "#e3aec7",
+          "color-da-plum-300": "#cf7fa5",
+          "color-da-plum-400": "#a94c77",
+          "color-da-plum-500": "#870f4d",
+          "color-da-plum-600": "#670639",
+          "color-da-plum-700": "#57052f",
+          "color-da-plum-800": "#470427",
+          "color-da-plum-900": "#38031f",
+          "color-da-plum": "#670639"
+        },
+        "light": {
+          "success": "#15803d",
+          "success-foreground": "#ffffff",
+          "warning": "#b45309",
+          "warning-foreground": "#ffffff",
+          "info": "#1d4ed8",
+          "info-foreground": "#ffffff",
+          "primary": "#ae1065",
+          "primary-foreground": "#ffffff",
+          "accent": "#fdf2f8",
+          "accent-foreground": "#630d3c",
+          "ring": "#ae1065",
+          "chart-1": "#ae1065",
+          "chart-2": "#ffcc00",
+          "chart-3": "#670639",
+          "chart-4": "#f272a6",
+          "chart-5": "#737373",
+          "sidebar-primary": "#ae1065",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#fdf2f8",
+          "sidebar-accent-foreground": "#630d3c",
+          "sidebar-ring": "#ae1065"
+        },
+        "dark": {
+          "success": "#22c55e",
+          "success-foreground": "#052e16",
+          "warning": "#f59e0b",
+          "warning-foreground": "#451a03",
+          "info": "#60a5fa",
+          "info-foreground": "#172554",
+          "primary": "#d63384",
+          "primary-foreground": "#ffffff",
+          "accent": "#3d0623",
+          "accent-foreground": "#fbcfe1",
+          "ring": "#d63384",
+          "chart-1": "#d63384",
+          "chart-2": "#ffcc00",
+          "chart-3": "#cf7fa5",
+          "chart-4": "#f8a8c9",
+          "chart-5": "#a3a3a3",
+          "sidebar-primary": "#d63384",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#3d0623",
+          "sidebar-accent-foreground": "#fbcfe1",
+          "sidebar-ring": "#d63384"
+        }
+      }
+    },
+    {
+      "name": "doherty-icon",
+      "type": "registry:component",
+      "title": "Doherty Icon",
+      "description": "The official Doherty Associates multi-strand 'D' icon as a currentColor SVG component.",
+      "files": [
+        { "path": "src/components/da/doherty-icon.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "brand-mark",
+      "type": "registry:component",
+      "title": "Brand Mark",
+      "description": "App-header lockup: Doherty icon plus product name and optional tagline.",
+      "files": [
+        { "path": "src/components/da/brand-mark.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "brand-angle",
+      "type": "registry:component",
+      "title": "Brand Angle",
+      "description": "The 60-degree angle supporting graphic from the brand guidelines.",
+      "files": [
+        { "path": "src/components/da/brand-angle.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:component",
+      "title": "Empty State",
+      "description": "Centred icon, heading, description and optional call-to-action, composing the shadcn Empty primitives.",
+      "registryDependencies": ["empty"],
+      "files": [
+        { "path": "src/components/da/empty-state.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "Theme Provider",
+      "description": "Light/dark/system theme provider for Vite apps (persists to localStorage, toggles the .dark class).",
+      "files": [
+        { "path": "src/components/da/theme-provider.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "mode-toggle",
+      "type": "registry:component",
+      "title": "Mode Toggle",
+      "description": "Light/Dark/System dropdown switcher; requires theme-provider.",
+      "registryDependencies": ["button", "dropdown-menu"],
+      "files": [
+        { "path": "src/components/da/mode-toggle.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "title": "Page Header",
+      "description": "Standard page heading with description and action slot.",
+      "files": [
+        { "path": "src/components/da/page-header.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "status-dot",
+      "type": "registry:component",
+      "title": "Status Dot",
+      "description": "RAG/status indicator dot with semantic colour variants.",
+      "files": [
+        { "path": "src/components/da/status-dot.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:component",
+      "title": "Stepper",
+      "description": "Numbered wizard stepper with progress line, completed ticks and optional prev/next arrows.",
+      "files": [
+        { "path": "src/components/da/stepper.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data Table",
+      "description": "Sortable, optionally paginated data table built on TanStack Table.",
+      "dependencies": ["@tanstack/react-table"],
+      "registryDependencies": ["table"],
+      "files": [
+        { "path": "src/components/da/data-table.tsx", "type": "registry:component" }
+      ]
+    }
+  ]
+}

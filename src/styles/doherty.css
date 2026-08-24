@@ -1,0 +1,247 @@
+/*
+ * Doherty Associates brand theme
+ * Source of truth: "Doherty Associates Brand Identity Guidelines" (V14, Dec 2022)
+ *
+ * Primary colours:  Magenta #AE1065 · Yellow #FFCC00 · Black #000000 · White #FFFFFF
+ * Secondary colour: Plum #670639 (use sparingly — max ~25% of a page)
+ * Brand font:       Work Sans (fallback: Arial)
+ *
+ * Consumers (Tailwind v4):
+ *   @import "tailwindcss";
+ *   @import "@doherty-associates/ui/styles.css";
+ *
+ * Semantic variables follow the shadcn theming convention
+ * (https://ui.shadcn.com/docs/theming): background/foreground pairs in
+ * oklch, exposed to Tailwind via @theme inline, dark mode via the .dark
+ * class. The raw brand palette further down keeps the exact guideline hex
+ * values for brand fidelity.
+ */
+
+@import "@fontsource-variable/work-sans";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* When this file ships inside the package, this directive tells the consuming
+   app's Tailwind build to scan the packaged components for utility classes. */
+@source "./";
+
+:root {
+  --radius: 0.5rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.1448 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1448 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1448 0 0);
+
+  /* DA Magenta (#AE1065) */
+  --primary: oklch(0.4947 0.1945 356.11);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.9702 0 0);
+  --secondary-foreground: oklch(0.2046 0 0);
+  --muted: oklch(0.9702 0 0);
+  --muted-foreground: oklch(0.5555 0 0);
+
+  /* Light magenta tint for hover/selected states */
+  --accent: oklch(0.9714 0.0141 343.2);
+  --accent-foreground: oklch(0.3363 0.1251 353.39);
+
+  --destructive: oklch(0.5771 0.2152 27.33);
+  --destructive-foreground: oklch(1 0 0);
+
+  --success: oklch(0.5273 0.1371 150.07);
+  --success-foreground: oklch(1 0 0);
+  --warning: oklch(0.5553 0.1455 49);
+  --warning-foreground: oklch(1 0 0);
+  --info: oklch(0.4882 0.2172 264.38);
+  --info-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9219 0 0);
+  --input: oklch(0.9219 0 0);
+  --ring: oklch(0.4947 0.1945 356.11);
+
+  /* Charts: brand primaries first, plum as contrast, then tints */
+  --chart-1: oklch(0.4947 0.1945 356.11);
+  --chart-2: oklch(0.8652 0.1768 90.38);
+  --chart-3: oklch(0.3386 0.1324 356.58);
+  --chart-4: oklch(0.7173 0.1658 356.56);
+  --chart-5: oklch(0.5555 0 0);
+
+  --sidebar: oklch(0.9851 0 0);
+  --sidebar-foreground: oklch(0.1448 0 0);
+  --sidebar-primary: oklch(0.4947 0.1945 356.11);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.9714 0.0141 343.2);
+  --sidebar-accent-foreground: oklch(0.3363 0.1251 353.39);
+  --sidebar-border: oklch(0.9219 0 0);
+  --sidebar-ring: oklch(0.4947 0.1945 356.11);
+}
+
+.dark {
+  --background: oklch(0.1448 0 0);
+  --foreground: oklch(0.9851 0 0);
+  --card: oklch(0.2046 0 0);
+  --card-foreground: oklch(0.9851 0 0);
+  --popover: oklch(0.2046 0 0);
+  --popover-foreground: oklch(0.9851 0 0);
+
+  /* Brighter magenta tint (#D63384) for contrast on dark surfaces */
+  --primary: oklch(0.5956 0.2086 355.48);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.2686 0 0);
+  --secondary-foreground: oklch(0.9851 0 0);
+  --muted: oklch(0.2686 0 0);
+  --muted-foreground: oklch(0.7155 0 0);
+
+  --accent: oklch(0.2434 0.0885 353.83);
+  --accent-foreground: oklch(0.8973 0.0545 351.74);
+
+  --destructive: oklch(0.6368 0.2078 25.33);
+  --destructive-foreground: oklch(1 0 0);
+
+  --success: oklch(0.7227 0.192 149.58);
+  --success-foreground: oklch(0.2664 0.0628 152.93);
+  --warning: oklch(0.7686 0.1647 70.08);
+  --warning-foreground: oklch(0.2791 0.0742 45.64);
+  --info: oklch(0.7137 0.1434 254.62);
+  --info-foreground: oklch(0.2823 0.0874 267.94);
+
+  --border: oklch(0.2686 0 0);
+  --input: oklch(0.3211 0 0);
+  --ring: oklch(0.5956 0.2086 355.48);
+
+  --chart-1: oklch(0.5956 0.2086 355.48);
+  --chart-2: oklch(0.8652 0.1768 90.38);
+  --chart-3: oklch(0.6921 0.1092 350.39);
+  --chart-4: oklch(0.8183 0.1022 353.2);
+  --chart-5: oklch(0.7155 0 0);
+
+  --sidebar: oklch(0.2046 0 0);
+  --sidebar-foreground: oklch(0.9851 0 0);
+  --sidebar-primary: oklch(0.5956 0.2086 355.48);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.2434 0.0885 353.83);
+  --sidebar-accent-foreground: oklch(0.8973 0.0545 351.74);
+  --sidebar-border: oklch(0.2686 0 0);
+  --sidebar-ring: oklch(0.5956 0.2086 355.48);
+}
+
+@theme inline {
+  /* Brand font (guidelines: Work Sans, fallback Arial) */
+  --font-sans: "Work Sans Variable", "Work Sans", Arial, Helvetica, sans-serif;
+
+  /* Radius scale derived from --radius (shadcn theming convention) */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* ------------------------------------------------------------------ */
+  /* Raw brand palette (guideline colours + derived tints)               */
+  /* Utilities: bg-brand-600, text-da-yellow, border-da-plum-600, ...    */
+  /* ------------------------------------------------------------------ */
+
+  /* DA Magenta — guideline primary. brand-600 is the exact brand hex.  */
+  --color-brand-50: #fdf2f8;
+  --color-brand-100: #fce7f0;
+  --color-brand-200: #fbcfe1;
+  --color-brand-300: #f8a8c9;
+  --color-brand-400: #f272a6;
+  --color-brand-500: #d63384;
+  --color-brand-600: #ae1065;
+  --color-brand-700: #8f0d53;
+  --color-brand-800: #760c46;
+  --color-brand-900: #630d3c;
+  --color-brand-950: #3d0623;
+  --color-brand: #ae1065;
+
+  /* DA Yellow — guideline primary. da-yellow-500 is the exact brand hex. */
+  --color-da-yellow-50: #fffbe6;
+  --color-da-yellow-100: #fff5bf;
+  --color-da-yellow-200: #ffea80;
+  --color-da-yellow-300: #ffdf40;
+  --color-da-yellow-400: #ffd51a;
+  --color-da-yellow-500: #ffcc00;
+  --color-da-yellow-600: #d9ad00;
+  --color-da-yellow-700: #b38f00;
+  --color-da-yellow-800: #8c7000;
+  --color-da-yellow-900: #665200;
+  --color-da-yellow: #ffcc00;
+
+  /* DA Plum — guideline secondary, use sparingly (max ~25% of a page).
+     da-plum-600 is the exact brand hex. */
+  --color-da-plum-50: #f9edf3;
+  --color-da-plum-100: #f2d8e4;
+  --color-da-plum-200: #e3aec7;
+  --color-da-plum-300: #cf7fa5;
+  --color-da-plum-400: #a94c77;
+  --color-da-plum-500: #870f4d;
+  --color-da-plum-600: #670639;
+  --color-da-plum-700: #57052f;
+  --color-da-plum-800: #470427;
+  --color-da-plum-900: #38031f;
+  --color-da-plum: #670639;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    outline-color: color-mix(in oklab, var(--color-ring) 50%, transparent);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  /* Guidelines: headings in Work Sans, sentence case or capitals */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+  }
+}
