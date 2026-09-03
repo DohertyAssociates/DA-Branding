@@ -6,6 +6,7 @@ import { ModeToggle } from "@/components/da/mode-toggle"
 import { PageHeader } from "@/components/da/page-header"
 import { ThemeProvider } from "@/components/da/theme-provider"
 
+import pkg from "../package.json"
 import { BrandSection } from "./sections/brand"
 import { FormsSection } from "./sections/forms"
 import { DisplaySection } from "./sections/display"
@@ -68,7 +69,7 @@ export default function App() {
           </main>
 
           <footer className="border-t py-6 text-center text-xs text-muted-foreground">
-            Doherty Associates — Combined Expertise
+            Doherty Associates — Combined Expertise · v{pkg.version}
           </footer>
           <Toaster richColors />
         </div>
