@@ -60,9 +60,10 @@ npm update.
 ## Prompt to give a consumer app's Claude session
 
 > Our shared branding lives in the `@da` shadcn registry
-> (`npx shadcn@latest registry add @da=<base>/r/{name}.json`; catalogue at
-> `npx shadcn@latest list @da`) and the `@doherty-associates/ui` npm package
-> (`C:\repos\DA-Branding`). Use what's there. If you need a component that
+> (`npx shadcn@latest registry add @da=https://<owner>.github.io/DA-Branding/r/{name}.json`;
+> browse with `npx shadcn@latest list @da`) and the `@doherty-associates/ui`
+> npm package (`npm install github:<owner>/DA-Branding`, or the local
+> checkout at `C:\repos\DA-Branding`). Use what's there. If you need a component that
 > doesn't exist: if it's brand-generic and reusable, create it in
 > `C:\repos\DA-Branding` following its CONTRIBUTING.md and consume it from
 > there; if it's specific to this application, build it in this app but

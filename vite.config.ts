@@ -7,6 +7,8 @@ import tailwindcss from "@tailwindcss/vite"
 // (see tsconfig.build.json) so the shipped files stay readable for
 // Tailwind's class scanner in consuming apps.
 export default defineConfig({
+  // GitHub Pages serves project sites under /<repo>/ — CI sets VITE_BASE.
+  base: process.env.VITE_BASE || "/",
   plugins: [react(), tailwindcss()],
   build: {
     // Keep the demo build away from the library's tsc output in dist/
