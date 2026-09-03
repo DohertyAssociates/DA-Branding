@@ -32,6 +32,30 @@ primitives and tokens: shadcn/DA components inside, semantic Tailwind classes
 (`bg-primary`, `text-muted-foreground`, `bg-brand-600`), never hardcoded hex
 values, never hand-rolled buttons/inputs/dialogs.
 
+## Promoting a component from an app into the registry
+
+When an app has built something (per the rules above: composed from @da
+primitives, theme tokens only) and it turns out to be reusable:
+
+1. Branch this repo (`git checkout -b add/<component-name>`).
+2. Copy the component into `src/components/da/<kebab-name>.tsx`; strip
+   app-specific logic — that stays in the app as a thin wrapper around the
+   promoted component.
+3. Follow "Adding a shared component" below (exports, registry.base.json,
+   demo, build, version bump).
+4. Push the branch and open a PR. **Merging to `main` is releasing** — the
+   GitHub Pages workflow redeploys the registry on every push to main — so
+   PRs get a brand/API review before merge (keep `main` branch-protected).
+5. After merge (~1 min to deploy), the originating app deletes its local
+   copy and consumes the shared one: `npx shadcn@latest add @da/<name>`
+   (or via the npm package). Do not keep the private copy — that recreates
+   the drift this repo exists to prevent.
+
+Note: registry consumers always receive the latest version — there is no
+per-app pinning on the registry route. Additive changes (new components,
+new variants) are safe any time; breaking changes to an existing component
+must be coordinated with the consuming apps like any API change.
+
 ## Adding a shared component to this repo
 
 1. Create it in `src/components/da/<kebab-name>.tsx`:
@@ -69,3 +93,6 @@ npm update.
 > there; if it's specific to this application, build it in this app but
 > compose it from registry primitives and theme tokens — never hardcode
 > brand colours or hand-roll primitives the registry already provides.
+> If an app-built component later proves reusable, promote it via a PR to
+> DA-Branding (see "Promoting a component" in its CONTRIBUTING.md), then
+> replace the app's local copy with the published @da item.
