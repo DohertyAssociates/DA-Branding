@@ -27,7 +27,7 @@ The package isn't on npmjs. Install from GitHub or a local checkout (the
 `prepare` script builds `dist/` automatically on git installs):
 
 ```bash
-npm install github:<owner>/DA-Branding   # from the public GitHub repo
+npm install github:DohertyAssociates/DA-Branding   # from the public GitHub repo
 # or
 npm install file:../DA-Branding          # local checkout
 ```
@@ -143,9 +143,9 @@ consumer's own aliases.
 workflow in `.github/workflows/deploy.yml` builds and publishes on every push
 to `main`. The same site hosts the visual component catalogue at its root.
 
-> Registry URL: `https://<owner>.github.io/DA-Branding/r/{name}.json`
-> Catalogue:    `https://<owner>.github.io/DA-Branding/`
-> (replace `<owner>` with the GitHub org once the repo is created)
+> Registry URL: `https://dohertyassociates.github.io/DA-Branding/r/{name}.json`
+> Catalogue:    `https://dohertyassociates.github.io/DA-Branding/`
+> 
 
 For local development, `npm run dev` serves the same thing at
 `http://localhost:5173/r/{name}.json`. To build by hand:
@@ -157,11 +157,11 @@ npm run build:registry   # registry.base.json + generator -> public/r/*.json
 **Consume in an app** — register the namespace once:
 
 ```bash
-npx shadcn@latest registry add @da=https://<owner>.github.io/DA-Branding/r/{name}.json
+npx shadcn@latest registry add @da=https://dohertyassociates.github.io/DA-Branding/r/{name}.json
 ```
 
-(or add `"registries": { "@da": "http://localhost:5173/r/{name}.json" }` to
-`components.json`), then:
+(or add `"registries": { "@da": "https://dohertyassociates.github.io/DA-Branding/r/{name}.json" }`
+to `components.json`), then:
 
 ```bash
 npx shadcn@latest add @da/theme        # brand vars, palettes, font, status colours

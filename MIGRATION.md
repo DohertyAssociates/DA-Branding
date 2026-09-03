@@ -27,7 +27,7 @@ drift found in the audit:
 - **npm package (default)** — `npm install file:../DA-Branding`; apps import
   components. One shared version everywhere. The steps below assume this.
 - **shadcn registry** — components are *copied into* the app:
-  `npx shadcn@latest registry add @da=https://<owner>.github.io/DA-Branding/r/{name}.json`
+  `npx shadcn@latest registry add @da=https://dohertyassociates.github.io/DA-Branding/r/{name}.json`
   (hosted on GitHub Pages, auto-deployed on push; locally `npm run dev`
   serves the same at http://localhost:5173), then
   `npx shadcn@latest add @da/theme @da/button …`.

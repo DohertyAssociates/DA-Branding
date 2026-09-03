@@ -4,6 +4,11 @@
   "description": "Doherty Associates shared branding and UI component library, built on shadcn/ui and Tailwind CSS v4",
   "type": "module",
   "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DohertyAssociates/DA-Branding.git"
+  },
+  "homepage": "https://dohertyassociates.github.io/DA-Branding/",
   "files": [
     "dist",
     "public/r",
