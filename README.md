@@ -196,3 +196,19 @@ built JSON.
 See `MIGRATION.md` for the per-app migration playbook, and `CONTRIBUTING.md`
 for governance: where new components live (this repo vs the consuming app)
 and how to add shared components.
+
+## Claude Code skill
+
+`.claude/skills/da-branding/SKILL.md` teaches Claude Code the whole system —
+registry URLs, styling rules, and the create-vs-promote governance. To have
+it apply in **every** project you work on, copy it to your personal skills
+folder:
+
+```
+mkdir -p ~/.claude/skills/da-branding
+cp .claude/skills/da-branding/SKILL.md ~/.claude/skills/da-branding/
+```
+
+(on Windows: `%USERPROFILE%\.claude\skills\da-branding\`). With that in
+place, any Claude session that touches UI code automatically consumes the
+`@da` registry and follows the brand rules — no prompt needed.
