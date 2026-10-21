@@ -11,6 +11,7 @@ export * from "./tokens"
 // DA brand components
 export { DohertyIcon } from "./components/da/doherty-icon"
 export { BrandMark } from "./components/da/brand-mark"
+export { BrandSplash, BrandSplashPanel } from "./components/da/brand-splash"
 export { BrandAngle } from "./components/da/brand-angle"
 export { EmptyState } from "./components/da/empty-state"
 export { PageHeader } from "./components/da/page-header"

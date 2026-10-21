@@ -12,6 +12,7 @@ import {
 import { Spinner } from "@/components/ui/spinner"
 import { BrandAngle } from "@/components/da/brand-angle"
 import { BrandMark } from "@/components/da/brand-mark"
+import { BrandSplash, BrandSplashPanel } from "@/components/da/brand-splash"
 import { DohertyIcon } from "@/components/da/doherty-icon"
 import { Stepper } from "@/components/da/stepper"
 import { Section, Block } from "../section"
@@ -63,6 +64,23 @@ export function BrandSection() {
           </Block>
           <Block label="Brand Mark">
             <BrandMark appName="Discover & Protect" tagline="Doherty Associates" />
+          </Block>
+          <Block label="Brand Splash (login)" className="sm:col-span-2">
+            <BrandSplash className="min-h-72 rounded-lg [&>svg]:h-[110%]">
+              <BrandSplashPanel>
+                <BrandMark appName="Discover & Protect" size="lg" className="justify-center" />
+                <Button className="mt-6 w-full">Sign in</Button>
+              </BrandSplashPanel>
+            </BrandSplash>
+          </Block>
+          <Block label="Card (brand variant)" className="sm:col-span-2">
+            <Card variant="brand">
+              <CardHeader className="flex flex-row items-center justify-between">
+                <CardTitle>Device</CardTitle>
+                <Button size="sm" variant="outline">Edit</Button>
+              </CardHeader>
+              <CardContent className="text-sm">White body, magenta band, Work Sans title.</CardContent>
+            </Card>
           </Block>
           <Block label="Brand Angle (60° device)" className="sm:col-span-2">
             <div className="relative h-24 overflow-hidden rounded-lg border">

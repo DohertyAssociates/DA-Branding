@@ -7,12 +7,14 @@
       "name": "theme",
       "type": "registry:theme",
       "title": "Doherty Associates Theme",
-      "description": "Brand colour variables from the DA Brand Identity Guidelines: Magenta #AE1065, Yellow #FFCC00, Plum #670639, Work Sans.",
-      "dependencies": ["@fontsource-variable/work-sans@^5.2.5"],
+      "description": "Brand colour variables from the DA Brand Identity Guidelines (Magenta #AE1065, Yellow #FFCC00, Plum #670639), the shadcn base tokens (background, card, muted, border, ...), Arial body text and Work Sans headings (font-heading).",
+      "dependencies": [
+        "@fontsource-variable/work-sans@^5.2.5"
+      ],
       "docs": "Import the brand font once in your app entry file: import \"@fontsource-variable/work-sans\"",
       "cssVars": {
         "theme": {
-          "font-sans": "\"Work Sans Variable\", \"Work Sans\", Arial, Helvetica, sans-serif",
+          "font-sans": "Arial, Helvetica, sans-serif",
           "color-brand-50": "#fdf2f8",
           "color-brand-100": "#fce7f0",
           "color-brand-200": "#fbcfe1",
@@ -46,7 +48,26 @@
           "color-da-plum-700": "#57052f",
           "color-da-plum-800": "#470427",
           "color-da-plum-900": "#38031f",
-          "color-da-plum": "#670639"
+          "color-da-plum": "#670639",
+          "font-heading": "\"Work Sans Variable\", \"Work Sans\", Arial, Helvetica, sans-serif",
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)"
         },
         "light": {
           "success": "#15803d",
@@ -69,7 +90,22 @@
           "sidebar-primary-foreground": "#ffffff",
           "sidebar-accent": "#fdf2f8",
           "sidebar-accent-foreground": "#630d3c",
-          "sidebar-ring": "#ae1065"
+          "sidebar-ring": "#ae1065",
+          "radius": "0.5rem",
+          "background": "oklch(1 0 0)",
+          "foreground": "oklch(0.1448 0 0)",
+          "card": "oklch(1 0 0)",
+          "card-foreground": "oklch(0.1448 0 0)",
+          "popover": "oklch(1 0 0)",
+          "popover-foreground": "oklch(0.1448 0 0)",
+          "secondary": "oklch(0.9702 0 0)",
+          "secondary-foreground": "oklch(0.2046 0 0)",
+          "muted": "oklch(0.9702 0 0)",
+          "muted-foreground": "oklch(0.5555 0 0)",
+          "destructive": "oklch(0.5771 0.2152 27.33)",
+          "destructive-foreground": "oklch(1 0 0)",
+          "border": "oklch(0.9219 0 0)",
+          "input": "oklch(0.9219 0 0)"
         },
         "dark": {
           "success": "#22c55e",
@@ -92,7 +128,37 @@
           "sidebar-primary-foreground": "#ffffff",
           "sidebar-accent": "#3d0623",
           "sidebar-accent-foreground": "#fbcfe1",
-          "sidebar-ring": "#d63384"
+          "sidebar-ring": "#d63384",
+          "background": "oklch(0.1448 0 0)",
+          "foreground": "oklch(0.9851 0 0)",
+          "card": "oklch(0.2046 0 0)",
+          "card-foreground": "oklch(0.9851 0 0)",
+          "popover": "oklch(0.2046 0 0)",
+          "popover-foreground": "oklch(0.9851 0 0)",
+          "secondary": "oklch(0.2686 0 0)",
+          "secondary-foreground": "oklch(0.9851 0 0)",
+          "muted": "oklch(0.2686 0 0)",
+          "muted-foreground": "oklch(0.7155 0 0)",
+          "destructive": "oklch(0.6368 0.2078 25.33)",
+          "destructive-foreground": "oklch(1 0 0)",
+          "border": "oklch(0.2686 0 0)",
+          "input": "oklch(0.3211 0 0)"
+        }
+      },
+      "css": {
+        "@layer base": {
+          "*": {
+            "border-color": "var(--color-border)"
+          },
+          "body": {
+            "background-color": "var(--color-background)",
+            "color": "var(--color-foreground)",
+            "font-family": "var(--font-sans)"
+          },
+          "h1, h2, h3, h4, h5, h6, [data-slot=\"card-title\"]": {
+            "font-family": "var(--font-heading)",
+            "font-weight": "700"
+          }
         }
       }
     },
@@ -102,7 +168,10 @@
       "title": "Doherty Icon",
       "description": "The official Doherty Associates multi-strand 'D' icon as a currentColor SVG component.",
       "files": [
-        { "path": "src/components/da/doherty-icon.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/doherty-icon.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -111,7 +180,10 @@
       "title": "Brand Mark",
       "description": "App-header lockup: Doherty icon plus product name and optional tagline.",
       "files": [
-        { "path": "src/components/da/brand-mark.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/brand-mark.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -120,7 +192,10 @@
       "title": "Brand Angle",
       "description": "The 60-degree angle supporting graphic from the brand guidelines.",
       "files": [
-        { "path": "src/components/da/brand-angle.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/brand-angle.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -128,9 +203,14 @@
       "type": "registry:component",
       "title": "Empty State",
       "description": "Centred icon, heading, description and optional call-to-action, composing the shadcn Empty primitives.",
-      "registryDependencies": ["empty"],
+      "registryDependencies": [
+        "empty"
+      ],
       "files": [
-        { "path": "src/components/da/empty-state.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/empty-state.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -139,7 +219,10 @@
       "title": "Theme Provider",
       "description": "Light/dark/system theme provider for Vite apps (persists to localStorage, toggles the .dark class).",
       "files": [
-        { "path": "src/components/da/theme-provider.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/theme-provider.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -147,9 +230,15 @@
       "type": "registry:component",
       "title": "Mode Toggle",
       "description": "Light/Dark/System dropdown switcher; requires theme-provider.",
-      "registryDependencies": ["button", "dropdown-menu"],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
       "files": [
-        { "path": "src/components/da/mode-toggle.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/mode-toggle.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -158,7 +247,10 @@
       "title": "Page Header",
       "description": "Standard page heading with description and action slot.",
       "files": [
-        { "path": "src/components/da/page-header.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/page-header.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -167,7 +259,10 @@
       "title": "Status Dot",
       "description": "RAG/status indicator dot with semantic colour variants.",
       "files": [
-        { "path": "src/components/da/status-dot.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/status-dot.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -176,7 +271,10 @@
       "title": "Stepper",
       "description": "Numbered wizard stepper with progress line, completed ticks and optional prev/next arrows.",
       "files": [
-        { "path": "src/components/da/stepper.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/stepper.tsx",
+          "type": "registry:component"
+        }
       ]
     },
     {
@@ -184,10 +282,29 @@
       "type": "registry:component",
       "title": "Data Table",
       "description": "Sortable, optionally paginated data table built on TanStack Table.",
-      "dependencies": ["@tanstack/react-table"],
-      "registryDependencies": ["table"],
+      "dependencies": [
+        "@tanstack/react-table"
+      ],
+      "registryDependencies": [
+        "table"
+      ],
       "files": [
-        { "path": "src/components/da/data-table.tsx", "type": "registry:component" }
+        {
+          "path": "src/components/da/data-table.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "brand-splash",
+      "type": "registry:component",
+      "title": "Brand Splash",
+      "description": "Login / splash screen: magenta background with the outline Doherty mark bleeding off the left edge, content panel right of centre.",
+      "files": [
+        {
+          "path": "src/components/da/brand-splash.tsx",
+          "type": "registry:component"
+        }
       ]
     }
   ]

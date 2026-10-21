@@ -131,8 +131,9 @@
 }
 
 @theme inline {
-  /* Brand font (guidelines: Work Sans, fallback Arial) */
-  --font-sans: "Work Sans Variable", "Work Sans", Arial, Helvetica, sans-serif;
+  /* Body Arial/Helvetica (guideline fallback, better at UI text sizes); Work Sans for headings */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-heading: "Work Sans Variable", "Work Sans", Arial, Helvetica, sans-serif;
 
   /* Radius scale derived from --radius (shadcn theming convention) */
   --radius-sm: calc(var(--radius) * 0.6);
@@ -240,8 +241,8 @@
     font-family: var(--font-sans);
   }
   /* Guidelines: headings in Work Sans, sentence case or capitals */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
+  h1, h2, h3, h4, h5, h6, [data-slot="card-title"] {
+    font-family: var(--font-heading);
     font-weight: 700;
   }
 }
