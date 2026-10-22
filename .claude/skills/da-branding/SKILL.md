@@ -51,8 +51,10 @@ in the app CSS.
   alerts, toasts, spinners, steppers, empty states — all exist, themed and
   accessible. `confirm()` → `AlertDialog`; `window.prompt()` → `Dialog` +
   `Input`; success flashes → `toast()` from sonner.
-- **Typography**: Work Sans everywhere (the theme provides it; Arial is the
-  guideline fallback). Headings sentence case.
+- **Typography**: Work Sans for headings only (h1–h6, card titles, the
+  BrandMark app name; `font-heading`), Arial/Helvetica for everything else
+  (`font-sans`, the body default). Work Sans at table/form sizes reads poorly.
+  Headings sentence case.
 - **Colour balance** (brand guidelines): magenta and yellow are the
   primaries; plum is a secondary used sparingly — at most ~25% of a page.
 - **Dark mode is free**: wrap the app in `ThemeProvider` and use
@@ -60,7 +62,26 @@ in the app CSS.
 
 Signature brand pieces when composing headers/login screens: `DohertyIcon`
 (the multi-strand "D", currentColor), `BrandMark` (icon + product name
-lockup), `BrandAngle` (the 60° device, use sparingly).
+lockup), `BrandAngle` (the 60° device, use sparingly), `BrandSplash`.
+
+## App layout (house pattern)
+
+- **Page**: grey background `bg-neutral-100 dark:bg-background`; content
+  `mx-auto max-w-7xl px-4 py-8`; `PageHeader` per page.
+- **Header**: white bar (`bg-background border-b h-16`), `BrandMark` left
+  with the full magenta mark (`logo={<img src={mark} … />}`; the image
+  comes from the brand team and lives in the app, not this public repo), nav links with a lucide icon each,
+  active link `border-b-2 border-primary text-foreground`, others
+  `border-transparent text-muted-foreground`; user, `ModeToggle` and
+  Sign out (with `LogOut` icon) right.
+- **Cards**: `<Card variant="brand">` — white, `shadow-md`, magenta header
+  band with a bold Work Sans title; buttons in the band render white
+  outline. Don't put a `CardDescription` in the band; put explanatory text
+  in the content.
+- **Login**: `BrandSplash` + `BrandSplashPanel` (magenta background, outline
+  mark bleeding off the left edge, pale panel right of centre). The outline
+  `DohertyIcon` artwork is cut on its left/bottom edges: use it for splash/
+  bleed only, never as a standalone header logo.
 
 ## When a needed component doesn't exist
 

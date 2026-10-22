@@ -12,7 +12,7 @@ Everything is themed from the **Doherty Associates Brand Identity Guidelines**
 | Yellow | `#FFCC00` | Primary — highlights, chart accents |
 | Black / White | `#000000` / `#FFFFFF` | Primary |
 | Plum | `#670639` | Secondary — sparingly (≤25% of a page) |
-| Font | Work Sans (variable) | Fallback: Arial |
+| Font | Work Sans (variable) for headings | Arial/Helvetica for body text |
 
 ## Preview the components
 
@@ -96,7 +96,8 @@ sonner.)
 | Component | Purpose |
 |---|---|
 | `DohertyIcon` | Official multi-strand "D" icon, `currentColor` |
-| `BrandMark` | App-header lockup (icon + product name + tagline) |
+| `BrandMark` | App-header lockup (icon + product name + tagline); `logo` takes the full mark |
+| `BrandSplash` | Login/splash screen: magenta, outline mark bleed, panel |
 | `BrandAngle` | The 60° angle supporting graphic |
 | `PageHeader` | Page title + description + actions |
 | `EmptyState` | Icon + heading + description + CTA (composes shadcn `Empty`) |

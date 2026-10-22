@@ -68,7 +68,8 @@ must be coordinated with the consuming apps like any API change.
      rather than hand-rolling focus/keyboard/ARIA handling
    - use **relative imports** (`../../lib/utils`, `../ui/button`) — the
      registry build rewrites them to `@/` aliases automatically
-   - follow the brand guidelines PDF: Work Sans, sentence-case headings,
+   - follow the brand guidelines PDF: Work Sans headings (`font-heading`),
+     Arial body text (`font-sans`), sentence-case headings,
      magenta/yellow as primaries, plum sparingly (≤25% of a page)
 2. Export it from `src/index.ts` (npm consumers).
 3. Add an item for it in `registry.base.json` (registry consumers) — name,

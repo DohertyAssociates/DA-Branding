@@ -28,9 +28,9 @@ export function PageHeader({
       )}
       {...props}
     >
-      <div className="space-y-1">
-        <h1 className="text-2xl font-bold tracking-tight text-foreground">{title}</h1>
-        {description && <p className="text-sm text-muted-foreground">{description}</p>}
+      <div className="space-y-2">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">{title}</h1>
+        {description && <p className="text-base text-muted-foreground">{description}</p>}
       </div>
       {actions && <div className="flex shrink-0 items-center gap-2">{actions}</div>}
     </div>

@@ -10,6 +10,13 @@ interface BrandMarkProps extends React.HTMLAttributes<HTMLDivElement> {
   tagline?: string
   /** Icon height. */
   size?: "sm" | "md" | "lg"
+  /**
+   * Header mark in place of the outline icon, e.g. the full magenta mark
+   * (from the brand team; not published in this repo):
+   *   <BrandMark logo={<img src={markUrl} alt="Doherty Associates" className="h-8 w-auto" />} ... />
+   * The outline DohertyIcon is cut on its left and bottom edges (it bleeds off a page edge): splash use.
+   */
+  logo?: React.ReactNode
 }
 
 const iconSizes = { sm: "h-6", md: "h-8", lg: "h-12" }
@@ -27,16 +34,17 @@ export function BrandMark({
   appName,
   tagline,
   size = "md",
+  logo,
   className,
   ...props
 }: BrandMarkProps) {
   return (
     <div className={cn("flex items-center gap-3", className)} {...props}>
-      <DohertyIcon className={cn(iconSizes[size], "w-auto shrink-0 text-primary")} />
+      {logo ?? <DohertyIcon className={cn(iconSizes[size], "w-auto shrink-0 text-primary")} />}
       {(appName || tagline) && (
         <div className="flex flex-col justify-center">
           {appName && (
-            <span className={cn("font-bold leading-tight text-foreground", nameSizes[size])}>
+            <span className={cn("font-heading font-bold leading-tight text-foreground", nameSizes[size])}>
               {appName}
             </span>
           )}
