@@ -64,8 +64,12 @@ brandColors.magenta   // "#AE1065"
 fonts.document        // "Arial" — for docx where Work Sans may be missing
 ```
 
-**4. Brand assets:** `@doherty-associates/ui/assets/doherty-icon.svg` and
-`assets/favicon.svg` (copy into `public/`), or render the icon as a component:
+**4. Brand assets:** `assets/doherty-icon-full.svg` is the complete icon
+(use this for logos, login screens and anywhere the mark is shown on its own;
+also served at https://dohertyassociates.github.io/DA-Branding/doherty-icon.svg
+for apps that can only reference a URL). `assets/doherty-icon.svg` and
+`assets/favicon.svg` are the cut version used as a bleed-off watermark by
+`BrandSplash`. Or render the icon as a component:
 
 ```tsx
 import { DohertyIcon } from "@doherty-associates/ui"
